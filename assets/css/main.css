@@ -5125,3 +5125,59 @@ a img {
     margin: 0;
     color: #fff
 }
+
+/* Blur Effect and Coming Soon Overlay */
+.blur-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.blur-content {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+}
+
+.coming-soon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.coming-soon-text {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.coming-soon-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.blur-container:hover .coming-soon-overlay {
+    opacity: 1;
+}
+
+.blur-container:hover .blur-content {
+    filter: blur(12px);
+}
